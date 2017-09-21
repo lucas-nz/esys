@@ -24,16 +24,36 @@ $(document).ready(function() {
 			if(type === 'bar1') {
 				var index = layer.tips('<img src="../static/images/bc-2.png" />', $(this), {
 					area: ['160px', '140px'],
+					time: 20 * 1000
 				});
+				$(this).on('mouseleave', function(){
+					layer.close(index);
+				});
+				
 				$('html').on('mousewheel', function() {
 					layer.close(index);
 				})
 			} else if(type === 'bar2') {
 				var index = layer.tips('給我一個吻~', $(this));
+				$(this).on('mouseleave', function(){
+					layer.close(index);
+				});
+				
 				$('html').on('mousewheel', function() {
 					layer.close(index);
 				})
 
+			}else if(type === 'top'){
+				var index = layer.tips('嗖嗖嗖~', $(this));
+				
+				$(this).on('mouseleave', function(){
+					layer.close(index);
+				});
+				
+				$('html').on('mousewheel', function() {
+					layer.close(index);
+				})
+				
 			}
 
 		})
